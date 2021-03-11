@@ -27,10 +27,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_BRANCH: master
-          BUILD_SCRIPT: yarn && yarn build
-          BUILD_DIR: docs/.vuepress/dist/
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '14'
+        run: ./deploy.sh
