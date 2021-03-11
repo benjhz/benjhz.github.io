@@ -31,4 +31,4 @@ jobs:
         uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
-      - run: ./deploy
+      - run: ./deploy.sh
